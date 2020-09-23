@@ -18,7 +18,8 @@ class ArticleViewModel(private val articleId: String) : BaseViewModel<ArticleSta
                 title = article.title,
                 category = article.category,
                 categoryIcon = article.categoryIcon,
-                date = article.date.format()
+                date = article.date.format(),
+                author = article.author
             )
 
         }
@@ -121,7 +122,7 @@ class ArticleViewModel(private val articleId: String) : BaseViewModel<ArticleSta
         val msg = if(!isLiked) Notify.TextMessage("Mark is liked")
         else{
             Notify.ActionMessage(
-                "Don't like it anymore",
+                "Don`t like it anymore",
                 "No, still like it",
                 toggleLike
             )
